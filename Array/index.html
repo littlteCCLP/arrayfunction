@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数组方法</title>
+</head>
+<body>
+	<script>
+		var arr = [1,2,3,1,2,3,4,5,6,12,44,77,44,88];
+		var ArrayCC = function(){};
+
+		/*** 数组去重 ***/
+		ArrayCC.prototype.clearDouble = function(arr){
+			var newArr = [],arrLength = arr.length;
+			for (var i = 0; i <= arrLength - 1; i++) {
+				if(arr.indexOf(arr[i],i+1) == -1){
+					newArr.push(arr[i]);
+				}
+			}
+			return newArr;
+		}
+
+		/*** 数组排序 ***/
+		ArrayCC.prototype.sortAction = function(arr){
+			arr.sort(function(a,b){
+				return a >= b ? 1 : -1
+			})
+			return this;//返回this可以用函数连着用的方法
+		}
+
+		/*** 数组倒序 ***/
+		ArrayCC.prototype.sortReverse = function(arr){
+			arr.reverse(arr);
+			return this;
+		}
+
+		/*** 数组 ***/
+		//ArrayCC.prototype.
+		var arrayto = new ArrayCC();
+		arrayto.sortAction(arr).sortReverse(arr);
+		console.log(arr);
+	</script>
+</body>
+</html>
